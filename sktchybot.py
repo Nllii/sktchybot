@@ -45,7 +45,7 @@ def sktchyBot(account_activity):
     response = requests.post('https://api.sktchy.com/api/v1/graph/filtered', headers=headers, cookies=cookies, data=data)
     if not account_activity.is_set():
         # call f() again in 60 seconds
-        threading.Timer(1200, sktchyBot, [account_activity]).start()
+        threading.Timer(100, sktchyBot, [account_activity]).start()
         posted_content = response.json()['graph/filtered']
         for post in posted_content:
             try:
@@ -80,7 +80,8 @@ sktchyBot(account_activity)
 
 def get_notifications(notifications):
     if not notifications.is_set():
-        threading.Timer(600, get_notifications, [notifications]).start()
+        print("i got called")
+        threading.Timer(200, get_notifications, [notifications]).start()
         msg = user.activity()
         for messages in msg['activity/activities']: 
             try:
@@ -121,7 +122,7 @@ get_notifications(notifications)
 
 def interact_home(landing_page):
     if not landing_page.is_set():
-        threading.Timer(3600, interact_home, [landing_page]).start()
+        threading.Timer(300, interact_home, [landing_page]).start()
         for ids in home.userIds():
             try:
                 database.save_history().homeIds.insert_one({"postids": ids['_id']})
