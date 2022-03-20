@@ -124,15 +124,16 @@ def interact_home(landing_page):
     if not landing_page.is_set():
         threading.Timer(300, interact_home, [landing_page]).start()
         for ids in home.userIds():
+            print(ids)
             try:
                 database.save_history().homeIds.insert_one({"postids": ids['_id']})
                 if "5555b3110a5373520990b849" in ids['userID']:
                     vote_art = vote.vote_image(img_id = ids['_id'])
                 else:
-                    artwork_id = describe_image.describe_artwork(_id =ids['_id'])
-                    sentences = describe_image.chooch_api(file_name= artwork_id)
-                    gpt3_response = describe_image.openai_gpt(description = sentences)
-                    leave_comment = comment.comment_(reply= gpt3_response,img_id = ids['_id'])
+                    # artwork_id = describe_image.describe_artwork(_id =ids['_id'])
+                    # sentences = describe_image.chooch_api(file_name= artwork_id)
+                    # gpt3_response = describe_image.openai_gpt(description = sentences)
+                    # leave_comment = comment.comment_(reply= gpt3_response,img_id = ids['_id'])
                     vote_art = vote.vote_image(img_id = ids['_id'])
 
 

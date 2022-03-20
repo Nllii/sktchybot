@@ -37,14 +37,15 @@ def userIds():
     home_feed  = []
     for post in posted_content:
         # pprint.pprint(post)
-        try:
             _id = post['_id']
             _name = post['meta']['bya']
             _by = post['meta']['by']
-            _message = post['meta']['h']
+            try:
+                _message = post['meta']['h']
+            except:
+                _message = 'No Message'
             _userID = post['usrID']
-            if 'h' in post['meta']:
-                json_ = {
+            json_ = {
 
                     'userID': _userID,
                     '_id': _id,
@@ -52,20 +53,6 @@ def userIds():
                     '_by': _by,
                     '_message': _message
                 }
-
-                home_feed.append(json_)
-            else:
-                pass
-        except:
-            json_ = {
-                
-                    'userID': _userID,
-                    '_id': _id,
-                    '_name': _name,
-                    '_by': _by,
-                    '_message': 'nice'
-                }
             home_feed.append(json_)
-            continue
     return home_feed
 
