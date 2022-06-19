@@ -28,7 +28,7 @@ OPEN_AI_KEY = ""
 
 
 # TODO: 
--[x] Added a dockerfile 
+- [x] Added a dockerfile 
 
 - [ ] finish writing the parameters for skipping users who don't want the bot to comment on their account.
 
