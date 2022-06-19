@@ -1,3 +1,7 @@
 openai
 dnspython
 siaskynet
+toml
+pymongo
+requests
+toml

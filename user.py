@@ -10,7 +10,7 @@ id_= credentials['program_credentials']
 # you will need to get the user id from the user_filtered function then call this function.
 def profile(user_id):
     """
-    # you will need to get the user id from the user_filtered function then call this function.
+    you will need to get the user id from the user_filtered function then call this function.
 
     """
 

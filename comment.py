@@ -5,10 +5,6 @@ import toml
 
 credentials = toml.load(Path("credentials.toml"))
 id_= credentials['program_credentials']
-# 'inEmail':id_['inEmail'],
-# 'inPass': id_['inPass'],
-
-
 
 def comment_(reply,img_id):
     
@@ -119,4 +115,3 @@ def reply_comment(message,imgID,userID,name):
 
 
 
-# reply_comment(message = "hello_world",imgID = "622f81a47ca60a0b786496e1",userID = "56ed09bf0a5373ab06cc7a13")

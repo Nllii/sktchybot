@@ -20,9 +20,15 @@ OPEN_AI_KEY = ""
 ```
 
 
+## Added a docker file . 
+
+
+
+
+
 # TODO: 
-- finish writing the parameters for skipping users who don't want the bot to comment on their account.
-- Finish writing the sktchyBot function. 
+~~- finish writing the parameters for skipping users who don't want the bot to comment on their account.~~
+~~- Finish writing the sktchyBot function. ~~
 
 
 

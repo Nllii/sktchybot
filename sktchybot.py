@@ -11,9 +11,6 @@ import re
 import toml 
 from pathlib import Path
 
-# get the path to the credentials file and read it using toml 
-# credentials_path = Path(os.path.dirname(os.path.realpath(__file__)) + "/credentials.toml")
-# credentials = toml.load(credentials_path)
 
 credentials = toml.load(Path("credentials.toml"))
 id_= credentials['program_credentials']
@@ -65,7 +62,6 @@ def sktchyBot(account_activity):
                         response = vote.unvote(img_id=ids['_id'])
                         print(response)
                     comment.delete_comment(post['_id'])
-
                 print(_message)
             except Exception as e:
                 print(e)
@@ -127,6 +123,7 @@ def interact_home(landing_page):
             print(ids)
             try:
                 database.save_history().homeIds.insert_one({"postids": ids['_id']})
+                # I have no idea what this is doing. TODO: Look into the code below and figure out what it does.
                 if "5555b3110a5373520990b849" in ids['userID']:
                     vote_art = vote.vote_image(img_id = ids['_id'])
                 else:
@@ -139,7 +136,7 @@ def interact_home(landing_page):
 
                 time.sleep(1)
             except Exception as e:
-                print("no new post")
+                print("no new posts found")
                 # print(e)
                 continue
         

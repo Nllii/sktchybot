@@ -69,7 +69,6 @@ def describe_artwork(_id):
     }
     response = requests.get(f'https://1fb6311c87ad3bea9c8c-c9a53b3ad860ce74916099727efb31e7.ssl.cf2.rackcdn.com/{_id}_t@2x.jpg', headers=headers, cookies=cookies)
     file_name = response.url.split("?")[0].split("/")[-1]
-    # add file to this folder /Users/admin/sktchyBot/art_images
     with open(f'/Users/admin/sktchyBot/art_images/{file_name}', 'wb') as f:
         f.write(response.content)
     return file_name

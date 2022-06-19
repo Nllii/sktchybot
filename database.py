@@ -2,8 +2,7 @@ import toml
 import os
 from pathlib import Path
 import os
-from pathlib import Path
-import toml 
+
 
 credentials = toml.load(Path("credentials.toml"))
 id_= credentials['program_credentials']
@@ -21,4 +20,9 @@ def save_history():
         print(e)
 
 
+
+
+
+
+# lol, this is a comment about pushing to github with a token in the file.
 # git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch database.py" HEAD

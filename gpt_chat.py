@@ -1,5 +1,4 @@
 import requests
-import openai
 
 # GPT2.
 def generate_text(get_text):
