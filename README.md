@@ -1,5 +1,5 @@
 # sktchybot
-bot that runs my sktchy account.
+bot that runs my sktchy account. https://museumapp.co/nii_golightly
 
 
 
